@@ -42,6 +42,9 @@ RUN easy-add --var os=${TARGETOS} --var arch=${TARGETARCH}${TARGETVARIANT} \
 COPY rcon-config.yml /templates/rcon-config.yml
 COPY rcon-velocity-config.toml /templates/rcon-velocity-config.toml 
 
+# Copy config file
+COPY config.yml /server/config.yml
+
 ENV SERVER_PORT=25577 RCON_PORT=25575
 EXPOSE $SERVER_PORT
 
